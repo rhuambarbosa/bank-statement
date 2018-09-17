@@ -1,4 +1,4 @@
-package br.com.rbs.bankstatement.bankstatement;
+package br.com.rbs.bankstatement;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
