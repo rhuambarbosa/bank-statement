@@ -1,4 +1,4 @@
-package br.com.rbs.bankstatement.bankstatement;
+package br.com.rbs.bankstatement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
