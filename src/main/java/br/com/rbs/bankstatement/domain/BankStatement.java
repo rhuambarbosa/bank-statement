@@ -1,25 +1,52 @@
 package br.com.rbs.bankstatement.domain;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
 public class BankStatement {
 
-    TotalControleLancamento totalControleLancamento;
+    private TotalControleLancamento totalControleLancamento;
+    private List<ControleLancamento> listaControleLancamento;
     private Integer indice;
     private Integer tamanhoPagina;
     private Integer totalElements;
 
-    private int id;
-
-    public BankStatement(int id) {
-        this.id = id;
+    public TotalControleLancamento getTotalControleLancamento() {
+        return totalControleLancamento;
     }
 
-    public int getId() {
-        return id;
+    public void setTotalControleLancamento(TotalControleLancamento totalControleLancamento) {
+        this.totalControleLancamento = totalControleLancamento;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public List<ControleLancamento> getListaControleLancamento() {
+        return listaControleLancamento;
+    }
+
+    public void setListaControleLancamento(List<ControleLancamento> listaControleLancamento) {
+        this.listaControleLancamento = listaControleLancamento;
+    }
+
+    public Integer getIndice() {
+        return indice;
+    }
+
+    public void setIndice(Integer indice) {
+        this.indice = indice;
+    }
+
+    public Integer getTamanhoPagina() {
+        return tamanhoPagina;
+    }
+
+    public void setTamanhoPagina(Integer tamanhoPagina) {
+        this.tamanhoPagina = tamanhoPagina;
+    }
+
+    public Integer getTotalElements() {
+        return totalElements;
+    }
+
+    public void setTotalElements(Integer totalElements) {
+        this.totalElements = totalElements;
     }
 }
