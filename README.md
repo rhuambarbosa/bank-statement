@@ -4,6 +4,8 @@ Aplicação que realiza a leitura de um arquivo json e disponibiliza em uma API 
 
 - Java 8
 - Spring MVC
+- Gradle
+- Docker
 
 Iniciando aplicação
 
