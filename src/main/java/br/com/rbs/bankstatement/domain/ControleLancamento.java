@@ -9,8 +9,10 @@ public class ControleLancamento {
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataEfetivaLancamento;
+
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataLancamentoContaCorrenteCliente;
+
     private Integer numeroEvento;
     private String descricaoGrupoPagamento;
     private Integer codigoIdentificadorUnico;

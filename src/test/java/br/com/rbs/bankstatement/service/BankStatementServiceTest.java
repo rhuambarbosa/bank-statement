@@ -1,14 +1,27 @@
 package br.com.rbs.bankstatement.service;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
+
+@RunWith(SpringRunner.class)
+@WebMvcTest(BankStatementService.class)
 public class BankStatementServiceTest {
 
+    @MockBean
+    private BankStatementService bankStatementServiceMocked;
+
     @Test
-    public void getBankStatement() {
-        // montar o json do objeto
-        //Construir Objeto que se quer receber a partir do json
-        //dizer que quando chamr o metodo x retornar o inputStream do json
-        //verificar as propriedades do objeto retornado estão de acordo com o objeto target
+    public void getBankStatement() throws IOException {
+       //TODO:Implementar Test
+    }
+
+    @Test
+    public void listBankStatement() throws IOException {
+        //TODO:Implementar Test
     }
 }

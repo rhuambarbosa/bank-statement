@@ -1,6 +1,6 @@
 package br.com.rbs.bankstatement.controller;
 
-import br.com.rbs.bankstatement.domain.BankStatement;
+import br.com.rbs.bankstatement.dto.BankStatementDTO;
 import br.com.rbs.bankstatement.service.BankStatementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 public class BankStatementController {
@@ -18,21 +19,21 @@ public class BankStatementController {
     private BankStatementService bankStatementService;
 
     @RequestMapping(value = "/bank-statement/", method = RequestMethod.GET)
-    public ResponseEntity<BankStatement> getBankStatement() {
+    public ResponseEntity<BankStatementDTO> getBankStatement() {
         Object body;
         HttpStatus status = HttpStatus.OK;
 
         try {
-            body = bankStatementService.getBankStatement();
+            body = bankStatementService.listBankStatement();
+
+            if (((List) body).isEmpty()) {
+                body = "Nenhum resultado disponivel";
+                status = HttpStatus.NO_CONTENT;
+            }
         } catch (IOException e) {
             e.printStackTrace();
             body = "Falha interna";
             status = HttpStatus.INTERNAL_SERVER_ERROR;
-        }
-
-        if (body == null) {
-            body = "Nenhum resultado disponivel";
-            status = HttpStatus.NO_CONTENT;
         }
 
         return new ResponseEntity(body, status);

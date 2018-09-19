@@ -29,4 +29,16 @@ public class DomicilioBancario {
     public void setNumeroContaCorrente(Long numeroContaCorrente) {
         this.numeroContaCorrente = numeroContaCorrente;
     }
+
+    public String getDetailAccount(final String nomeBanco){
+        final StringBuilder sb = new StringBuilder();
+        sb.append(this.codigoBanco);
+        sb.append(" - ").append(nomeBanco);
+        sb.append(" AG ");
+        sb.append(this.numeroAgencia);
+        sb.append(" CC ");
+        sb.append(this.numeroContaCorrente);
+        return sb.toString();
+
+    }
 }
